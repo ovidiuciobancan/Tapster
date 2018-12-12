@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  tapster.api.client:
+    image: ${DOCKER_REGISTRY}tapsterapiclient
+    build:
+      context: .
+      dockerfile: Tapster.Api.Client/Dockerfile
+
+  tapster.api.waiter:
+    image: ${DOCKER_REGISTRY}tapsterapiwaiter
+    build:
+      context: .
+      dockerfile: Tapster.Api.Waiter/Dockerfile
+
+
+  tapster.api.manager:
+    image: ${DOCKER_REGISTRY}tapsterapimanager
+    build:
+      context: .
+      dockerfile: Tapster.Api.Manager/Dockerfile
+
+
+  tapster.api:
+    image: ${DOCKER_REGISTRY}tapsterapi
+    build:
+      context: .
+      dockerfile: Tapster.Api/Dockerfile
+
